@@ -1,0 +1,6 @@
+{
+  "name": "CinePaz",
+  "description": "CinePaz live TV streaming app featuring news, entertainment, and movies with multi-route CDN failover.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
