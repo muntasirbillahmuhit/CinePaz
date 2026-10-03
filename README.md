@@ -1,4 +1,4 @@
-CinePaz
+##CinePaz
 
 A modern web-based live TV streaming interface built with React, TypeScript, Vite, Tailwind CSS, and HLS.js.
 
