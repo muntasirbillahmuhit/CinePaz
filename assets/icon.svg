@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Rich 3D Red Gradient for the squircle body -->
+    <radialGradient id="bodyGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FF1A24" />
+      <stop offset="50%" stop-color="#E50000" />
+      <stop offset="85%" stop-color="#C40000" />
+      <stop offset="100%" stop-color="#990000" />
+    </radialGradient>
+
+    <!-- Top glossy rim highlight -->
+    <linearGradient id="topRimGloss" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8" />
+      <stop offset="30%" stop-color="#FFFFFF" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Outer border bevel -->
+    <linearGradient id="outerBevel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFA8AC" stop-opacity="0.9" />
+      <stop offset="15%" stop-color="#FF333D" stop-opacity="0.6" />
+      <stop offset="85%" stop-color="#800000" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#400000" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Drop Shadow filter for soft depth -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+
+    <filter id="innerGlow">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowDiff" />
+      <feFlood flood-color="#FFFFFF" flood-opacity="0.25" />
+      <feComposite in2="shadowDiff" operator="in" />
+      <feComposite in2="SourceGraphic" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Main Squircle Body with Outer Bevel -->
+  <rect x="24" y="24" width="976" height="976" rx="230" ry="230" fill="url(#outerBevel)" filter="url(#shadow)" />
+  <rect x="36" y="36" width="952" height="952" rx="218" ry="218" fill="url(#bodyGradient)" />
+
+  <!-- Top Glass Highlight Reflection Curve -->
+  <path d="M 120 48 Q 512 85 904 48 C 960 48 970 80 970 120 C 970 200 950 260 900 290 Q 512 360 124 290 C 74 260 54 200 54 120 C 54 80 64 48 120 48 Z" 
+        fill="url(#topRimGloss)" opacity="0.45" />
+
+  <!-- Play Symbol - Pure Solid White Equilateral Triangle -->
+  <polygon points="360,260 760,512 360,764" fill="#FFFFFF" />
+</svg>
