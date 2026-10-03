@@ -1,60 +1,25 @@
-##CinePaz
+# CinePaz
 
-A modern web-based live TV streaming interface built with React, TypeScript, Vite, Tailwind CSS, and HLS.js.
+A modern, web-based live TV streaming interface built with React, TypeScript, Vite, Tailwind CSS, and HLS.js.
 
-Features
+## Features
 
-- Modern dark-themed interface
-- Live TV channel browsing
-- HLS (".m3u8") video playback
-- Full-screen video player
-- Search functionality
-- Channel categories
-- Favorite channels
-- Custom playlists
-- Responsive mobile-friendly UI
-- Smooth animations and transitions
-- Bottom navigation
-- Video loading skeletons
+- Dark-themed, responsive, mobile-friendly UI
+- Live channel browsing with categories and search
+- HLS (`.m3u8`) playback with a full-screen player
+- Favorite channels and custom playlists
 - Multiple stream source support
+- Smooth animations, loading skeletons, and bottom navigation
 
-Tech Stack
+## Tech Stack
 
-- React 19
-- TypeScript
-- Vite
-- Tailwind CSS
-- Motion
-- HLS.js
-- Lucide React
+React 19 · TypeScript · Vite · Tailwind CSS · Motion · HLS.js · Lucide React
 
-Requirements
+## Adding Channels
 
-- Node.js 20 or newer
-- npm
+Channels are defined in `src/data/channels.ts`:
 
-Run Development Server
-
-npm run dev
-
-Build for Production
-
-npm run build
-
-The production files will be generated in the "dist" directory.
-
-Preview Production Build
-
-npm run preview
-
-Adding Channels
-
-Channel information is maintained in:
-
-src/data/channels.ts
-
-A channel can contain information such as:
-
+```ts
 {
   id: "example-channel",
   name: "Example Channel",
@@ -65,57 +30,29 @@ A channel can contain information such as:
   description: "Channel description.",
   isFavorite: false
 }
+```
 
-Only add streams that you are authorized to use or that are legally available for redistribution.
+> Only add streams you are authorized to use or that are legally available for redistribution.
 
-Custom Playlists
+## Custom Playlists
 
-Playlist functionality is handled by:
+Use the **Playlists** section in the app to load your own playlists. Parsing logic lives in `src/utils/playlistParser.ts`.
 
-src/utils/playlistParser.ts
+## Security
 
-CinePaz supports custom playlist functionality through the Playlists section.
+Never commit secrets to a public repository, including API keys, access tokens, passwords, private URLs, credentials, or personal information. If a secret has been exposed, revoke or rotate it immediately.
 
-Security
+## Disclaimer
 
-Do not publish sensitive information such as:
+CinePaz is a streaming interface only. It does not claim ownership of any third-party channels, logos, trademarks, or video streams. Users are responsible for ensuring the content they add or access is legal in their jurisdiction.
 
-- API keys
-- Access tokens
-- Passwords
-- Private URLs
-- Authentication credentials
-- Personal information
+## Contributing
 
-Never commit secrets to a public GitHub repository.
+1. Fork the repository
+2. Create a new branch
+3. Make your changes and test locally
+4. Commit and open a pull request
 
-If a secret has already been exposed publicly, revoke or rotate it immediately.
+## License
 
-Disclaimer
-
-CinePaz is a streaming interface/application project.
-
-The application does not claim ownership of third-party channels, logos, trademarks, video streams, or other third-party content.
-
-Users are responsible for ensuring that the streams and content they add or access are legally permitted in their jurisdiction.
-
-License
-
-This project does not currently specify an open-source license.
-
-If you intend to distribute CinePaz as open-source software, add an appropriate "LICENSE" file.
-
-Contributing
-
-1. Fork the repository.
-2. Create a new branch.
-3. Make your changes.
-4. Test the application locally.
-5. Commit your changes.
-6. Open a pull request.
-
-Author
-
-CinePaz
-
-Built with React, TypeScript, Vite, and modern web technologies.
+No license is currently specified. To release CinePaz as open source, add a `LICENSE` file (e.g., MIT).
